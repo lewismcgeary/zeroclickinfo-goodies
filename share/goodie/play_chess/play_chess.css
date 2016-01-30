@@ -1,4 +1,13 @@
-.zci--play_chess {
-
+.zci--play_chess .board-cell {
+    line-height:40px;
+    font-size:27px;
+    text-align:center;
+    outline-width:0;
+    outline-style:solid;
+    outline-color:red;
+    
 }
 
+.zci--play_chess .board {
+    border:2px solid;
+} 

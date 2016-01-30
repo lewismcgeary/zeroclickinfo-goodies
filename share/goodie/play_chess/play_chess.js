@@ -20,8 +20,8 @@ DDH.play_chess = DDH.play_chess || {};
             id: 'play_chess',
 
             meta: {
-                sourceName: "Boom",
-                sourceUrl: "https://source.website.com"
+                sourceName: "nanochess.org",
+                sourceUrl: "http://www.nanochess.org/"
             },
 
             // data: {
@@ -128,12 +128,12 @@ DDH.play_chess = DDH.play_chess || {};
               while (B++ <
                   120) I[B - 1] = B % x ? B / x % x < 2 | B % x < 2 ? 7 : B / x & 4 ? 0 : l[i++] | 16 : 7;
               for (a =
-                  "<table cellspacing=0 align=center>", i = 18; i < 100; a += ++i % 10 - 9 ?
-                  "<th width=60 height=60 onclick=Y(" + i + ") id=o" + i +
-                  " style='line-height:50px;font-size:50px;border:2px solid #dde' bgcolor=#" +
-                  (i * .9 & 1 ? "c0c" : "f0f") + "0f0>" : (i++, "<tr>"));
-              a += "<th colspan=8><select id=t style='font-size:20px'><option>&#9819;<option>";
-              $("#chessboard").html(a + "&#9820;<option>&#9821;<option>&#9822;</select></table>");
+                  "<table cellspacing=0 align=center class='board'>", i = 18; i < 100; a += ++i % 10 - 9 ?
+                  "<th width=40 height=40 onclick=Y(" + i + ") id=o" + i +
+                  " class='board-cell' bgcolor=#" +
+                  (i * .9 & 1 ? "ddd" : "fff") + ">" : (i++, "<tr>"));
+              a += "<th colspan=8></table><br/><select id=t style='font-size:20px'><option>&#9819;<option>";
+              $("#chessboard").html(a + "&#9820;<option>&#9821;<option>&#9822;</select>");
 
               function W() {
                   B = b;
@@ -141,7 +141,7 @@ DDH.play_chess = DDH.play_chess || {};
                       if (q = document.getElementById("o" + p)) {
                           q.
                           innerHTML = "\xa0\u265f\u265a\u265e\u265d\u265c\u265b  \u2659\u2654\u2658\u2657\u2656\u2655".charAt(I[p] & z);
-                          q.style.borderColor = p == B ? "red" : "#dde";
+                          q.style.outlineWidth = p == B ? "2px" : "0";
                       }
               }
               W();
