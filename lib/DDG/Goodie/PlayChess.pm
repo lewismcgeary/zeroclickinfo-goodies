@@ -14,7 +14,7 @@ zci answer_type => 'play_chess';
 zci is_cached => 1;
 
 # Triggers - http://docs.duckduckhack.com/walkthroughs/calculation.html#triggers
-triggers any => 'triggerword', 'trigger phrase';
+triggers any => 'triggerword', 'trigger phrase', 'play chess';
 
 # Handle statement
 handle remainder => sub {
@@ -42,7 +42,7 @@ handle remainder => sub {
             # Name - Used for Answer Bar Tab
             # Value should be chosen from existing Instant Answer topics
             # see http://docs.duckduckhack.com/frontend-reference/display-reference.html#name-string-required
-            name => 'Answer',
+            name => 'Play Chess',
 
             data => {
               title => "My Instant Answer Title",
@@ -52,6 +52,9 @@ handle remainder => sub {
 
             templates => {
                 group => "text",
+                options => {
+                    content => 'DDH.play_chess.play_chess'
+                }
                 # options => {
                 #
                 # }
